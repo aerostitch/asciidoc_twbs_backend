@@ -34,7 +34,33 @@ function build_top_menu(){
     type: "GET" ,
     url: "/menu.xml" ,
     dataType: "xml" ,
-    success: build_topleft_menu
+    error: function() { 
+      $('#menu-header-bar').attr('style', 'display: none;');
+      $('body').attr('style', 'padding-top: 10px;');
+    },
+    success: function(xml){
+      $('#menu-header-bar')
+    .attr('class','navbar navbar-inverse navbar-fixed-top')
+        .append(
+          '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">'
+          + ' <span class="icon-bar"></span>'
+          + ' <span class="icon-bar"></span>'
+          + ' <span class="icon-bar"></span>'
+          + '</button>'
+          + '<div class="container">'
+          + ' <div class="navbar-header">'
+          + '   <a class="navbar-brand" href="/">aerostitch\'s tips</a>'
+          + ' </div>'
+          + ' <div class="navbar-collapse collapse">'
+          + '   <ul class="nav navbar-nav" id="menu_left">'
+          + '     <li></li>'
+          + '   </ul>'
+          + ' </div>'
+          + '</div>'
+          );
+
+      build_topleft_menu(xml);
+    }
   });
 }
 
@@ -162,6 +188,16 @@ function build_sidebar_treeview_ztree(){
   $.ajax({type: "GET" ,
     url: "/index.json" ,
     dataType: "json" ,
+    error: function(){
+      $('#ztree-div-container').remove();
+      $('#show-me-menu-direction').remove();
+      if($('#sidebar').children().length == 0)
+      {
+        $('#global-container-offcanvas').attr('class','');
+        $('#left-pane').attr('class', '');
+        $('#sidebar').remove();
+      }
+    },
     success: function(json_tree){
       $.each(json_tree, function(i, node){ cmp_url_lvl(node, 1) })
       $.fn.zTree.init($("#index_page_idx"), setting, json_tree);
