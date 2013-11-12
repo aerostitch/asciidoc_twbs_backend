@@ -1,0 +1,7 @@
+TODO list for enhancing the backend
+===================================
+
+* Provide the zip file in order to be able to install this as a backend.
+* Add a search engine based on description, keywords, title of files
+* Add a Ariadne's thread generated on jquery based on current path and index.xml
+* enhance backend...
