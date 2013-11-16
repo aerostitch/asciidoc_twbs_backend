@@ -4,4 +4,20 @@ TODO list for enhancing the backend
 * Provide the zip file in order to be able to install this as a backend.
 * Add a search engine based on description, keywords, title of files
 * Add a Ariadne's thread generated on jquery based on current path and index.xml
+* Use HTML5 tags (main, header, article, nav, aside, datalist...)
+* add a box-shadow to the sidebars and other elts.
+* Find something more styly for the titles like:
+  box-shadow: 0 1px 0 #969c8a, 0 2px 0 #fff;
+* Test out the background: linear-gradient(to bottom, #3e606f, #324d59)
+* Add custom font:
+  @font-face{
+    font-family: 'DroidSerifRegular';
+    src: url('DroidSerifRegular.eot');
+    font-style: normal;
+    font-weight: normal;
+  }
+  body {
+    font-family: 'DroidSerifRegular', Georgia, 'Times New Roman', serif
+  }
+* change sizes to use "em".
 * enhance backend...
