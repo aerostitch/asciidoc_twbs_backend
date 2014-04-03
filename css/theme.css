@@ -125,4 +125,4 @@ code {
   /*font-family: monospace, "Helvetica Neue",Helvetica,Arial,sans-serif;*/
   font-family:Consolas, Monaco,"Lucida Console",Courier,monospace;
 }
-tt { font-family:Consolas, Monaco,"Lucida Console",Courier,monospace; }
+tt > span { font-family:Consolas, Monaco,"Lucida Console",Courier,monospace; }
