@@ -126,3 +126,7 @@ code {
   font-family:Consolas, Monaco,"Lucida Console",Courier,monospace;
 }
 tt span { font-family:Consolas, Monaco,"Lucida Console",Courier,monospace; }
+pre {
+  border: none            !important;
+  background: transparent !important;
+}
